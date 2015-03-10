@@ -2,21 +2,14 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-AUTHOR = u'Buddycloud team'
-SITENAME = u'Buddycloud'
-SITEURL = ''
-
-TIMEZONE = 'Europe/Berlin'
-
-DEFAULT_LANG = u'en'
-
+SITEURL = "http://xmpp.org" #Unused (Pelican complains if you don't provide it)
+TIMEZONE = "Europe/Munich"  #Unused (Pelican complains if you don't provide it)
+SITENAME = "XMPP | The most secure messaging protocol | WebRTC, IOT, Social"
 DIRECT_TEMPLATES = ['index']
-
 STATIC_PATHS = [ 'img', 'CNAME' ]
-
 THEME = 'theme'
-
-MD_EXTENSIONS = [ 'codehilite(css_class=highlight)', 'extra', 'mdext.fix_code_blocks' ]
+MD_EXTENSIONS = [ 'codehilite(css_class=highlight)', 'extra' ]
+DEFAULT_PAGINATION = 3
 
 import os, sys
 sys.path.append(os.path.join(os.getcwd(), "jinjaext"))
@@ -27,13 +20,3 @@ JINJA_FILTERS = {
 		  'create_toc' : TOC.createTableOfContents,
 		  'add_toc_hooks' : TOC.addTableOfContentsHooks
 		}
-
-GOOGLE_ANALYTICS = "UA-1075750-9"
-
-SLATE_PAGES_DIR = 'pages/slate'
-PAGE_EXCLUDES = ['pages/slate']
-
-PLUGINS = ['slate.pelican_plugin',]
-
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
