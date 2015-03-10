@@ -10,5 +10,6 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
+SITEURL = "http://xmpp.org" #Should be the same pointed by the CNAME if used
 RELATIVE_URLS = False
 DELETE_OUTPUT_DIRECTORY = True

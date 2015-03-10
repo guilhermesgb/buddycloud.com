@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-SITEURL = "http://xmpp.org" #Unused (Pelican complains if you don't provide it)
+SITENAME = "XMPP"
+SITEURL = ""
 TIMEZONE = "Europe/Munich"  #Unused (Pelican complains if you don't provide it)
-SITENAME = "XMPP | The most secure messaging protocol | WebRTC, IOT, Social"
 DIRECT_TEMPLATES = ['index']
 STATIC_PATHS = [ 'img', 'CNAME' ]
 THEME = 'theme'
