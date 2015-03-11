@@ -14,10 +14,6 @@ This project builds a static website and deploys it into the GitHub Pages page a
 Please refer to https://help.github.com/articles/adding-a-cname-file-to-your-repository for more information on this process.
 Then, beware that your CNAME file should be located under the `content` folder. You can simply rename the `/content/CNAME.example` file back to `/content/CNAME` and then edit its content to use a different custom domain.
 
-top_menu_show
-top_menu_order
-top_menu_name
-drop_down_menu_show
-drop_down_menu_size
-drop_down_menu_elem_name_<%d>
-drop_down_menu_elem_url_<%d>
+### Custom Metadata options
+
+Explanation about these new options added by me (guilhermesgb) coming soon.
