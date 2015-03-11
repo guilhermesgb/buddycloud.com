@@ -23,11 +23,10 @@ STATIC_PATHS = [ 'CNAME' ]
 ARTICLE_PATHS = [ 'posts/blog', 'posts/learn' ]
 ARTICLE_URL = 'posts/{blog_id}/{date:%Y}/{date:%b}/{date:%d}/{slug}'
 ARTICLE_SAVE_AS = 'posts/{blog_id}/{date:%Y}/{date:%b}/{date:%d}/{slug}.html'
+INDEX_SAVE_AS = 'posts/blog/index.html'
 
 USE_FOLDER_AS_CATEGORY = False
 DEFAULT_PAGINATION = 5
-#DIRECT_TEMPLATES = [ 'page', 'categories', 'authors', 'archives' ]
-#PAGINATED_DIRECT_TEMPLATES = [ 'page' ]
 
 THEME = "theme"
 

@@ -22,7 +22,18 @@
   </header>
   {% endif %}
   {% if active_page_is_blog|default("false") == "true" %}
-
+    <div class="page-content row">
+      <div class="large-8 columns">
+        {% block blog_entries %}
+        {% endblock %}
+      </div>
+      <div class="large-1 columns">
+      </div>
+      <div class="sidebar large-3 columns">
+        {% block blog_archives %}
+        {% endblock %}
+      </div>
+    </div>
   {% else %}
     {% if content_layout != "wide" %}
     <div class="page-content row">

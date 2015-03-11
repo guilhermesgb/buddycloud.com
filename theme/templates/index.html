@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% set active_page = "blog" %}
+{% set active_page_title = "The XMPP Blog" %}
+{% set active_page_is_blog = "true" %}
+
+{% block blog_entries %}
+{% for article in articles_page.object_list %}
+  <article>
+    <h1>{{ article.title }}</h1>
+    {{ article.summary }}
+    <h6>
+      Posted by
+      <a href="#">{{ article.author }}</a>
+      on
+      <a href="#">{{ article.date|strftime('%B, %d, %Y') }}</a>
+      - filed under
+      <a href="#">{{ article.category }}</a>
+    </h6>
+  </article>
+{% endfor %}
+{% include 'pagination.html' %}
+{% endblock %}
+
+{% block blog_archives %}
+{% endblock %}

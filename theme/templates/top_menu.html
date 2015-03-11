@@ -43,6 +43,16 @@
       </li>
       <li class="divider"></li>
       {% endfor %}
+      <li
+        {% if active_page == "blog" %}
+        class="active"
+        {% endif %}
+       >
+        <a href="{{ SITEURL }}/posts/blog/index.html">
+          XMPP Blog
+        </a>
+      </li>
+      <li class="divider"></li>
     </ul>
   </section>
 </nav>
