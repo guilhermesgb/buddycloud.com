@@ -4,6 +4,8 @@
 {% set active_page_is_blog = "true" %}
 
 {% block blog_entries %}
+{% block content_title %}
+{% endblock %}
 {% for article in articles_page.object_list %}
   <article>
     <h1>{{ article.title }}</h1>
@@ -22,6 +24,10 @@
   </article>
 {% endfor %}
 {% include 'pagination.html' %}
+{% endblock %}
+
+{% block blog_categories %}
+  {% include "categories.html" %}
 {% endblock %}
 
 {% block blog_archives %}
