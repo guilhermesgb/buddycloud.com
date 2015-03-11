@@ -1,0 +1,6 @@
+<h4>Archives</h4>
+<ul>
+{% for article in dates %}
+  <li><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></li>
+{% endfor %}
+</ul>

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% set active_page = article.blog_id %}
-{% set active_page_title = article.blog_title %}
+{% set active_page = "blog" %}
+{% set active_page_url = "posts/blog/index.html" %}
+{% set active_page_title = "The XMPP Blog" %}
 {% set content_layout = "single-column" %}
 
 {% block content %}
