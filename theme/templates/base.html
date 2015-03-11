@@ -40,10 +40,8 @@
     {% endif %}
     {% if content_layout == "multiple-columns" %}
       <div class="sidebar large-3 columns">
-        <h4>Related stuff</h4>
-        <ul>
-          <li><a href="#">Something</a></li>
-        </ul>
+        {% block related_content %}
+        {% endblock %}
       </div>
       <div class="large-8 columns">
         <article>

@@ -8,6 +8,9 @@
   <article>
     <h1>{{ article.title }}</h1>
     {{ article.summary }}
+    <p>
+      <a href="{{ SITEURL }}/{{ article.url }}">Continue reading &raquo;</a>
+    </p>
     <h6>
       Posted by
       <a href="#">{{ article.author }}</a>
