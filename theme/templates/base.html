@@ -21,8 +21,38 @@
     </h1>
   </header>
   {% endif %}
-  {% block page_content %}
-  {% endblock %}
+  {% if active_page_is_blog|default("false") == "true" %}
+
+  {% else %}
+    {% if content_layout != "wide" %}
+    <div class="page-content row">
+    {% endif %}
+    {% if content_layout == "multiple-columns" %}
+      <div class="sidebar large-3 columns">
+        <h4>Related stuff</h4>
+        <ul>
+          <li><a href="#">Something</a></li>
+        </ul>
+      </div>
+      <div class="large-8 columns">
+        <article>
+    {% endif %}
+    {% if content_layout == "single-column" %}
+      <div class="large-8 large-centered columns">
+        <article>
+    {% endif %}
+      {% block content %}
+      {% endblock %}
+    {% if content_layout != "wide" %}
+        </article>
+      </div>
+      {% if content_layout == "multiple-columns" %}
+      <div class="large-1 columns">
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  {% endif %}
 
   {% include 'footer.html' %}
 

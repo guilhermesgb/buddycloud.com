@@ -2,8 +2,9 @@
 {% set active_page_url = page.url|replace(" ", "") %}
 {% set active_page = page.parent_id|default(active_page_url) %}
 {% set active_page_title = page.title %}
-{% set content_layout = page.content_layout|default("column") %}
+{% set active_page_is_blog = page.is_blog %}
+{% set content_layout = page.content_layout|default("single-column") %}
 
-{% block page_content %}
+{% block content %}
   {{ page.content }}
 {% endblock %}

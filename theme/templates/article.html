@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% set active_page = article.blog_id %}
+{% set active_page_title = article.blog_title %}
+
+{% block content %}
+  {{ article.content }}
+{% endblock %}
