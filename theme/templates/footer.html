@@ -1,0 +1,27 @@
+<footer class="top-bar">
+  <section class="top-bar-section">
+    <ul class="left">
+      <li>
+        <a href="/">
+          Home
+        </a>
+      </li>
+      {% for page in PAGES|sort(attribute='footer_order') if page.footer_show|default("false") == "left" %}
+      <li>
+        <a href="{{ SITEURL }}/{{ page.url }}">
+          {{ page.menu_name|default(page.title) }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    <ul class="right">
+      {% for page in PAGES|sort(attribute='footer_order') if page.footer_show|default("false") == "right" %}
+      <li>
+        <a href="{{ SITEURL }}/{{ page.url }}">
+          {{ page.menu_name|default(page.title) }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</footer>

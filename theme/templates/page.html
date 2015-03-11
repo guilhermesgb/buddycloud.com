@@ -1,25 +1,10 @@
 {% extends "base.html" %}
-{% set active_page = page.slug %}
+{% set active_page = page.parent_id|default(page.url|replace(" ", "")) %}
 {% set content_layout = page.content_layout|default("column") %}
 {% block title %}{{ page.title }}{% endblock %}
 
-{% if page.table_of_contents|default("false") == "true" %}
-  {% set toc_info = page.content|extract_toc_info(active_page) %}
-{% endif %}
-{% block page_table_of_contents %}
-  {% if page.table_of_contents|default("false") == "true" %}
-    <div id="full-toc" class="bs-docs-sidebar hidden-print affix-top hidden-xs hidden-sm" role="complementary">
-      {{ toc_info|create_toc }}
-    </div>
-  {% endif %}
-{% endblock %}
-
 {% block page_content %}
   <div class="bs-docs-section">
-    {% if page.table_of_contents|default("false") == "true" %}
-      {{ page.content|add_toc_hooks(toc_info, active_page) }}
-    {% else %}
-      {{ page.content }}
-    {% endif %}
+    {{ page.content }}
   </div>
 {% endblock %}
