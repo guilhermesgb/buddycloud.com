@@ -2,30 +2,27 @@
 <html class="no-js" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}XMPP | The most secure messaging protocol | WebRTC, IOT, Social{% endblock %}</title>
+  <title>XMPP | {{ active_page_title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/theme/static/img/favicon.ico" />
   <link rel="stylesheet" href="/theme/css/app.css" type="text/css" />
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Exo+2:700,400|Merriweather:300italic,300,700" type="text/css" />
   <script src="/theme/vendor/modernizr/modernizr.js"></script>
 </head>
-<body class="{{ active_page }}">
+<body class="{{ active_page }}" style="overflow-y: scroll;">
   {% include 'top_menu.html' %}
 
-  {% if content_layout == "column" %}
-  <div class="container bs-docs-container">
-    <div class="row">
-      <div class="col-md-3 col-sm-3">
-      </div>
-      <div class="col-md-9 col-sm-9" role="main" style="overflow-x:auto; padding-bottom: 10px;">
+  {% if content_layout != "wide" %}
+  <header class="header-internal">
+    <h1>
+      <a href="/{{ active_page_url }}">
+        {{ active_page_title }}
+      </a>
+    </h1>
+  </header>
   {% endif %}
-        {% block page_content %}
-        {% endblock %}
-  {% if content_layout == "column" %}
-      </div>
-    </div>
-  </div>
-  {% endif %}
+  {% block page_content %}
+  {% endblock %}
 
   {% include 'footer.html' %}
 

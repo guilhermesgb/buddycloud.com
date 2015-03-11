@@ -1,7 +1,8 @@
 {% extends "base.html" %}
-{% set active_page = page.parent_id|default(page.url|replace(" ", "")) %}
+{% set active_page_url = page.url|replace(" ", "") %}
+{% set active_page = page.parent_id|default(active_page_url) %}
+{% set active_page_title = page.title %}
 {% set content_layout = page.content_layout|default("column") %}
-{% block title %}{{ page.title }}{% endblock %}
 
 {% block page_content %}
   {{ page.content }}
