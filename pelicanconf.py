@@ -29,6 +29,8 @@ INDEX_SAVE_AS = 'posts/blog/index.html'
 USE_FOLDER_AS_CATEGORY = False
 DEFAULT_PAGINATION = 2
 
+YEAR_ARCHIVE_SAVE_AS = 'posts/blog/{date:%Y}/index.html'
+
 THEME = "theme"
 
 MD_EXTENSIONS = [ 'codehilite(css_class=highlight)', 'extra' ]

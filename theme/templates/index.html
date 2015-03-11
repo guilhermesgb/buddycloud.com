@@ -16,11 +16,17 @@
     </p>
     <h6>
       Posted by
-      <a href="#">{{ article.author }}</a>
+      {% if article.authors %}
+      {% for author in article.authors %}
+      <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>{% if not loop.last %},{% endif %}
+      {% endfor %}
+      {% else %}
+      <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+      {% endif %}
       on
       <a href="#">{{ article.date|strftime('%B, %d, %Y') }}</a>
       - filed under
-      <a href="#">{{ article.category }}</a>
+      <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
     </h6>
   </article>
 {% endfor %}
@@ -32,5 +38,5 @@
 {% endblock %}
 
 {% block blog_archives %}
-  {% include "archives.html" %}
+  {% include "period_archives.html" %}
 {% endblock %}
