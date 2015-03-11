@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% set active_page = article.blog_id %}
 {% set active_page_title = article.blog_title %}
+{% set content_layout = "single-column" %}
 
 {% block content %}
+  <h1>{{ article.title }}</h1>
   {{ article.content }}
+  <h6>
+    Posted by
+    <a href="#">{{ article.author }}</a>
+    on
+    <a href="#">{{ article.date|strftime('%B, %d, %Y') }}</a>
+    - filed under
+    <a href="#">{{ article.category }}</a>
+  </h6>
 {% endblock %}
